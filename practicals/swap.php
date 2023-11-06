@@ -1,17 +1,21 @@
 <?php
-// Define two numbers
-$num1 = 10;
-$num2 = 20;
+function swapNumbers(&$number1, &$number2) {
+    // Use pass-by-reference to modify the original variables
+    $temp = $number1;
+    $number1 = $number2;
+    $number2 = $temp;
+}
 
-// Display the original values
-echo "Original values: num1 = $num1, num2 = $num2<br>";
+$number1 = 5;
+$number2 = 10;
 
-// Swap the numbers using a temporary variable
-$temp = $num1;
-$num1 = $num2;
-$num2 = $temp;
+echo "Before swapping: ";
+echo "Number 1 = " . $number1 . ", Number 2 = " . $number2 . "<br>";
 
-// Display the swapped values
-echo "Swapped values: num1 = $num1, num2 = $num2";
+// Call the swapNumbers function to swap the numbers
+swapNumbers($number1, $number2);
+
+echo "After swapping: ";
+echo "Number 1 = " . $number1 . ", Number 2 = " . $number2;
 ?>
 
