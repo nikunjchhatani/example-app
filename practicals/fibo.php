@@ -1,20 +1,23 @@
 <?php
 function generateFibonacci($n) {
-    $fibonacci = array();
-    
-    if ($n >= 1) {
-        $fibonacci[] = 0; // The first Fibonacci number
+    $fibonacciSequence = [];
+
+    if ($n < 1) {
+        return $fibonacciSequence; // No Fibonacci numbers to generate
     }
-    
-    if ($n >= 2) {
-        $fibonacci[] = 1; // The second Fibonacci number
+
+    $fibonacciSequence = [0]; // The first Fibonacci number
+
+    if ($n > 1) {
+        $fibonacciSequence[] = 1; // The second Fibonacci number
     }
-    
+
     for ($i = 2; $i < $n; $i++) {
-        $fibonacci[$i] = $fibonacci[$i - 1] + $fibonacci[$i - 2];
+        $nextFibonacci = $fibonacciSequence[$i - 1] + $fibonacciSequence[$i - 2];
+        $fibonacciSequence[] = $nextFibonacci;
     }
-    
-    return $fibonacci;
+
+    return $fibonacciSequence;
 }
 
 $n = 10; // Change this to the number of Fibonacci numbers you want to generate
@@ -24,6 +27,5 @@ $fibonacciNumbers = generateFibonacci($n);
 foreach ($fibonacciNumbers as $number) {
     echo $number . " ";
 }
-
 ?>
 
