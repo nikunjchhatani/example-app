@@ -4,8 +4,8 @@ function isPrime($number) {
         return false;
     }
 
-    for ($i = 2; $i * $i <= $number; $i++) {
-        if ($number % $i == 0) {
+    for ($divisor = 2; $divisor * $divisor <= $number; $divisor++) {
+        if ($number % $divisor == 0) {
             return false;
         }
     }
@@ -13,10 +13,17 @@ function isPrime($number) {
     return true;
 }
 
-for ($i = 2; $i <= 10; $i++) {
-    if (isPrime($i)) {
-        echo $i . " ";
+function printPrimesUpTo($limit) {
+    for ($i = 2; $i <= $limit; $i++) {
+        if (isPrime($i)) {
+            echo $i . " ";
+        }
     }
 }
+
+$limit = 10; // Change this to set the upper limit for prime numbers
+
+echo "Prime numbers up to $limit: ";
+printPrimesUpTo($limit);
 ?>
 
