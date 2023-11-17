@@ -4,7 +4,7 @@ namespace Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
 
-require('/practicals/Practical.php');
+require(__DIR__.'/../../practicals/Practical.php');
 use practicals\Practical;
 
 class PracticalTest extends TestCase
