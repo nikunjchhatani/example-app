@@ -17,4 +17,12 @@ class SongsTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    public function songs_static() {
+        $httpClient = new \GuzzleHttp\Client();
+        $response = $httpClient->get('/songs_static');
+
+        // Failing assertion to expect a 200 OK status code
+        $this->assertEquals(200, $response->getStatusCode());
+    }
 }
