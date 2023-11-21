@@ -1,52 +1,39 @@
 <?php
+namespace practicals;
 
 class Practical {
     /**
-     * Prints "Hello, World!"
+     * Function to print "Hello, World!"
      */
     public static function printHello() {
-        echo "Hello, World!" . PHP_EOL;
+        echo "Hello, World!\n";
     }
 
     /**
-     * Takes two numbers as arguments. Returns the sum of two numbers.
-     *
-     * @param int $num1 The first number.
-     * @param int $num2 The second number.
-     * @return int The sum of $num1 and $num2.
+     * Function to add two numbers
+     * @param int $num1 The first number
+     * @param int $num2 The second number
+     * @return int The sum of the two numbers
      */
     public static function add($num1, $num2) {
+      if(!is_numeric($num1) || !is_numeric($num2))
+      {
+        throw new \InvalidArgumentException("Arguments must be integers");
+      }
         return $num1 + $num2;
     }
 
     /**
-     * Takes an integer 'n' as an argument. Returns an array of Fibonacci sequence containing 'n' integers.
-     *
-     * @param int $n The number of Fibonacci numbers to generate.
-     * @return array An array containing the first 'n' Fibonacci numbers.
+     * Function to generate a Fibonacci sequence
+     * @param int $n The number of elements in the Fibonacci sequence
+     * @return array An array containing the Fibonacci sequence
      */
     public static function generateFibonacciSequence($n) {
-        $sequence = [];
-        $a = 0;
-        $b = 1;
-
-        for ($i = 0; $i < $n; $i++) {
-            $sequence[] = $a;
-            $next = $a + $b;
-            $a = $b;
-            $b = $next;
+        $fibonacciSequence = [0, 1];
+        for ($i = 2; $i < $n; $i++) {
+            $fibonacciSequence[$i] = $fibonacciSequence[$i - 1] + $fibonacciSequence[$i - 2];
         }
-
-        return $sequence;
+        return $fibonacciSequence;
     }
 }
-
-// Example usage
-Practical::printHello();
-$result = Practical::add(5, 7);
-echo "Sum: " . $result . PHP_EOL;
-$fibonacciSequence = Practical::generateFibonacciSequence(10);
-echo "Fibonacci Sequence: " . implode(", ", $fibonacciSequence) . PHP_EOL;
-
 ?>
-
