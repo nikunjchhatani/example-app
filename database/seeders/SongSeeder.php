@@ -16,13 +16,17 @@ class SongSeeder extends Seeder
 
         // Seed a few songs
         Song::create([
+            'Serial No' => '1'
             'artist' => 'Eminem',
             'title' => 'Stan',
+            'duration' => '3:30',
         ]);
 
         Song::create([
+            'Serial No' => '2'
             'artist' => 'A P Dhillon',
             'title' => 'With You',
+            'duration' => '4:15',
         ]);
 
     }
