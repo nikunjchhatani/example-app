@@ -1,19 +1,24 @@
-<section>
-            <div>
-                <div>Serial No</div>
-                <div>Song Title</div>
-                <div>Artist Name</div>
-                <div>Album Name</div>
-                <div>Duration</div>
-            </div>
+<table>
+    <thead>
+        <tr>
+                <th>Serial No</th>
+                <th>Song Title</th>
+                <th>Artist Name</th>
+                <th>Album Name</th>
+                <th>Duration</th>
+        </tr>
+    </thead>
+    <tbody>
             @foreach($songs as $song)
                 <!-- Song 1 -->
-                <div class="song">
-                    <div>{{ $song->id }}</div>
-                    <div>{{ $song->title }}</div>
-                    <div>{{ $song->artist }}</div>
-                    <div>Album 1</div>
-                    <div>3:30</div>
-                </div>
+                <tr>
+                    <td>{{ $song->id }}</td>
+                    <td>{{ $song->title }}</td>
+                    <td>{{ $song->artist }}</td>
+                    <td>Album 1</td>
+                    <td>3:30</td>
+                </tr>
             @endforeach
-        </section>
+    </tbody>
+</table>
+        

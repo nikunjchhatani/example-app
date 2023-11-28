@@ -13,17 +13,17 @@
         <p>Playlist Description or Information</p>
     </header>
     <main>
-        <aside>
+        <sidebar>
             <h2>Saved Playlists</h2>
             <ul>
                 <li>Playlist 1</li>
                 <li>Playlist 2</li>
                 <li>Playlist 3</li>
             </ul>
-        </aside>
-
+        </sidebar>
+        </main>
         @yield('content')
-    </main>
+    
 
     <footer>
         <p>&copy; 2023 Playlist App | <a href="#">About</a> | <a href="#">Contact</a></p>
